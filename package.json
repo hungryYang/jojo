@@ -1,0 +1,22 @@
+{
+  "name": "lulu",
+  "version": "0.1.0",
+  "description": "jojo 这就是我的逃跑路线",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hungryYang/jojo.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "hungryyang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hungryYang/jojo/issues"
+  },
+  "homepage": "https://github.com/hungryYang/jojo#readme"
+}
