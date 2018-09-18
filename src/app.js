@@ -9,7 +9,7 @@ Vue.component('jo-button-group', ButtonGroup)
 
 new Vue({
   el: '#app',
-  data() {
+  data () {
     return {
       loading1: false
     }
