@@ -38,11 +38,9 @@
         transform: rotate(360deg);
       }
     }
-
     vertical-align: middle;
     height: var(--button-height);
     padding: 0 1em;
-    font: inherit;
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     background: var(--button-bg);
@@ -52,17 +50,14 @@
 
     .icon {
       margin-right: .1em;
-
       &-right {
         order: 2;
         margin-right: 0;
         margin-left: .1em;
       }
-
       .content {
         order: 1;
       }
-
       &-loading {
         animation: loading 2s infinite linear;
       }
