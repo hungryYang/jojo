@@ -6,5 +6,10 @@ Vue.component('jo-button', Button)
 Vue.component('jo-icon', Icon)
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  data () {
+    return {
+      loading1: false
+    }
+  }
 })

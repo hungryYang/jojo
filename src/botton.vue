@@ -1,6 +1,7 @@
 <template>
-  <button class="jo-button">
-    <jo-icon class="icon" :name="icon" :class="{[`icon-${iconPosition}`]: true}" v-if="icon"></jo-icon>
+  <button class="jo-button" @click="$emit('click')">
+    <jo-icon class="icon" :name="icon" :class="{[`icon-${iconPosition}`]: true}" v-if="icon && !loading"></jo-icon>
+    <jo-icon v-if="loading" name="loading" class="icon icon-loading" :class="{[`icon-${iconPosition}`]: true}"></jo-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -12,15 +13,32 @@
       icon: {
         type: String
       },
+      loading: {
+        type: Boolean,
+        default: false
+      },
       iconPosition: {
         type: String,
-        default: 'left'
+        default: 'left',
+        validator(value) {
+          return value === 'left' || value === 'right'
+        }
       }
     }
   }
 </script>
 <style lang="scss">
   .jo-button {
+    @keyframes loading {
+      0% {
+        transform: 0;
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
     vertical-align: middle;
     height: var(--button-height);
     padding: 0 1em;
@@ -34,6 +52,7 @@
 
     .icon {
       margin-right: .1em;
+
       &-right {
         order: 2;
         margin-right: 0;
@@ -42,6 +61,10 @@
 
       .content {
         order: 1;
+      }
+
+      &-loading {
+        animation: loading 2s infinite linear;
       }
     }
 
