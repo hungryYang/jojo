@@ -31,7 +31,7 @@
   .jo-button {
     @keyframes loading {
       0% {
-        transform: 0;
+        transform: rotate(0deg);
       }
 
       100% {
@@ -50,6 +50,9 @@
 
     .icon {
       margin-right: .1em;
+      &-left {
+        order: 0;
+      }
       &-right {
         order: 2;
         margin-right: 0;

@@ -26,7 +26,46 @@ new Vue({
     }
   })
 
-  button.$mount('#test')
+  button.$mount()
   let useElement = button.$el.querySelector('use')
-  expect(useElement.getAttribute('xlink:href')).to.equal('#i-setting')
+  let href = useElement.getAttribute('xlink:href')
+  expect(href).to.equal('#i-setting')
+  button.$el.remove()
+  button.$destroy()
+}
+
+{
+  const div = document.createElement('div')
+  document.body.appendChild(div)
+  let Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData: {
+      icon: 'setting',
+    }
+  })
+
+  button.$mount(div)
+  let svg = button.$el.querySelector('svg')
+  let { order } = window.getComputedStyle(svg)
+  expect(order).to.equal('0')
+  button.$el.remove()
+  button.$destroy()
+}
+{
+  const div = document.createElement('div')
+  document.body.appendChild(div)
+  let Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData: {
+      icon: 'setting',
+      iconPosition: 'right'
+    }
+  })
+
+  button.$mount(div)
+  let svg = button.$el.querySelector('svg')
+  let { order } = window.getComputedStyle(svg)
+  expect(order).to.equal('2')
+  button.$el.remove()
+  button.$destroy()
 }
