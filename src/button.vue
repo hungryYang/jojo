@@ -8,7 +8,11 @@
   </button>
 </template>
 <script>
+  import Icon from './icon'
   export default {
+    components: {
+      'jo-icon': Icon
+    },
     props: {
       icon: {
         type: String
