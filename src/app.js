@@ -47,7 +47,6 @@ const expect = chai.expect
       icon: 'setting',
     }
   })
-
   vm.$mount(div)
   let svg = vm.$el.querySelector('svg')
   let { order } = window.getComputedStyle(svg)
